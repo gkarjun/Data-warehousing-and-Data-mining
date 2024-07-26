@@ -1,0 +1,13 @@
+classA <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+classB <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+meanA <- mean(classA)
+meanB <- mean(classB)
+medianA <- median(classA)
+medianB <- median(classB)
+rangeA <- max(classA) - min(classA)
+rangeB <- max(classB) - min(classB)
+cat("Class A:\nMean:", meanA, "\nMedian:", medianA, "\nRange:", rangeA, "\n\n")
+cat("Class B:\nMean:", meanB, "\nMedian:", medianB, "\nRange:", rangeB, "\n")
+combined_data <- list(ClassA = classA, ClassB = classB)
+boxplot(combined_data, col = c("lightblue", "lightgreen"), main = "Boxplot of Class A and Class B", 
+        names = c("Class A", "Class B"), ylab = "Scores")

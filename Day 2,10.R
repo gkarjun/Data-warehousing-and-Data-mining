@@ -1,0 +1,6 @@
+dia<-read.csv("C://Users//FLORENCIA ABEL//OneDrive//Documents//diabetes.csv")
+View(dia)
+plot(dia$Age, dia$BloodPressure, xlab = "Age", ylab = "Blood Pressure", main = "Blood Pressure vs. Age", col = "blue",pch = 16)
+age_group_labels <- cut(dia$Age, breaks = c(0, 35, 55, Inf), labels = c("Young", "Middle-aged", "Elderly"))
+age_group_avg_bp <- tapply(dia$BloodPressure, age_group_labels, mean)
+barplot(age_group_avg_bp, main = "Average Blood Pressure by Age Group",xlab = "Age Group",ylab = "Average Blood Pressure", col = "steelblue", ylim = c(0, max(age_group_avg_bp) * 1.2))
